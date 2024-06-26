@@ -2,7 +2,7 @@ import express from 'express';
 import * as dotenv from "dotenv";
 import cors from "cors";
 import mongoose from 'mongoose';
-import crypto from 'crypto';
+
 import UserRouter from "./routes/User.js";
 
 dotenv.config();
@@ -30,8 +30,7 @@ const ConnectDB=()=>{
 }
 
 
-const secret = crypto.randomBytes(64).toString('hex');
-console.log(secret);
+
 
 app.use((err, req, res, next) => {
     const status = err.status || 500;
@@ -44,7 +43,7 @@ app.use((err, req, res, next) => {
   });
   
 
-console.log("hello");
+
 ConnectDB();
 const port=8080;
 app.listen(port, ()=>console.log(`server is running on port ${port}`))
