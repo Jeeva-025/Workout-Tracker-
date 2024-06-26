@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended:true}));
 app.use("/api/user", UserRouter);
 app.get("/", async(req,res)=>{
     res.status(200).json({
-        message:"hello gfg Developers"
+        message:"hello Developers"
     })
 })
 
